@@ -1,7 +1,7 @@
 # spell_chornk
 Autocorrect that mis-spells words
 <br>
-Inspired by https://chrome.google.com/webstore/detail/make-donald-drumpf-again/eppfpfolmpkpclmcpgplmfllbnokngbb?hl=en
+Inspired by [make donald drumpf again](https://chrome.google.com/webstore/detail/make-donald-drumpf-again/eppfpfolmpkpclmcpgplmfllbnokngbb?hl=en)
 
 ## Usage
 (copy from issue 1)
