@@ -1,5 +1,6 @@
 # spell_chornk
-Auto spell correct that corrects by mis-spelling correct words
+Autocorrect that mis-spells words
+<br>
 Inspired by https://chrome.google.com/webstore/detail/make-donald-drumpf-again/eppfpfolmpkpclmcpgplmfllbnokngbb?hl=en
 
 ## Usage
