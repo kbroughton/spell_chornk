@@ -1,30 +1,24 @@
-# python_template_repo
+# spell_chornk
+Auto spell correct that corrects by mis-spelling correct words
+Inspired by https://chrome.google.com/webstore/detail/make-donald-drumpf-again/eppfpfolmpkpclmcpgplmfllbnokngbb?hl=en
 
-Created via "Use this template" button from template_repo
+## Usage
+(copy from issue 1)
 
-This is the python class of template repos. More child repos could include jupyter_notebook or flask.
+## Getting Started
+(add instractuions)
 
-Experimental:
-We used templating instead of forking to create this child repo without knowing if it will allow us to merge in specially tagged commits back into the parent template_repo.
+## Contributing
+(how to contribute new dict mappings to the officially supported default dict)
+(how to set up testing)
 
-Todo:
+## TODO
+See issues for more details
 
-* Jupyter notebook support (possibly child template repo)
-** pip install nbdime
-** pip install nbstripout
+* Create browser plugin based on make-drumpf above
+* Create public API with authenticated and unauthenticated endpoints
+* Add more swap algorithms (abbreviate long words to shorter ones, use word2vec to get near meanings, use synonyms or homonyms)
 
 
 --------------------------------------------------------------------------------------------------
-## parent repo: template_repo
-
-We assume for now that for minimum deployment utility we will need Docker and expect the following
-Dockerfiles 
-* Dockerfile - (dev.Dockerfile)
-* prod.Dockerfile - hardened but still useful 
-* sec.Dockerfile - experimental and sometimes prohibitively hardened
-* test.Dockerfile - staging/test gate accepting updates from sec. or dev. Dockerfiles
-
-
-The archetype template child will be python_template_repo which will include package versioning (pip), setup.py, python linting, security checks for dependencies etc. If during the course of development we introduce a convention in template_repo_python which is not specific to python, we can merge that commit back into template_repo.
-
-It's interesting to consider licensing since GitHub requires it to set up a repo. It seems natural to pick the least restrictive license (MIT) and child repos (forks) can only become more restrictive (GPLV3). 
+## Based on python-template-repo github template
