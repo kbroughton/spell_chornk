@@ -12,7 +12,9 @@ import hashlib
 @click.option('--text', prompt="Your text: ", help="Text to convert or file path beginning with '@'")
 @click.option('--swap-alg', default="sha256", help="Hash function to use for the input")
 def chornk(num_changes, only_changes, text, swap_alg):
-    """Simple program that changes a given number of words in a text. If the text has less words than the given number, there will be as many changes as words in the text"""
+    """Simple program that changes a given number of words in a text. If the text has less words than the given
+    number, there will be as many changes as words in the text """
+    
     hash_dic = {"sha256": hashlib.sha256(), "sha1": hashlib.sha1()}
     if(hash_dic.get(swap_alg) is None):
         print("Not a valid hash function")
@@ -30,10 +32,7 @@ def chornk(num_changes, only_changes, text, swap_alg):
             text = file.read()
             file.close()
 
-    print(spell_dic)
-
     words = re.findall(r'\b[A-Za-z]+\b', text)  # returns a list with all the words in the text
-    print(words)
 
     new_text = text
     change_count = 0
@@ -49,21 +48,18 @@ def chornk(num_changes, only_changes, text, swap_alg):
                 break
         rand_used.append(rand)
         word = words[rand]
-        print("1: " + word)
         if word[0].isupper():
             word = word.lower()
             has_upper = True
         if spell_dic.get(word) is not None:
             misspells = spell_dic.get(word)
             new_word = misspells[random.randint(0, len(misspells)-1)]
-            print("1: " + new_word)
             if has_upper:
                 new_word = new_word[0].upper() + new_word[1::]
             changes.append([text.find(words[rand]), words[rand], new_word])
             change_count += 1
             rand_changed.append(rand)
             new_text = new_text.replace(words[rand], new_word)
-            print("1: " + new_text)
     
     if num_changes > change_count:
         rand_used = []
@@ -77,18 +73,15 @@ def chornk(num_changes, only_changes, text, swap_alg):
                     break
             rand_used.append(rand)
             word = words[rand]
-            print("2: " + word)
             if word[0].isupper():
                 word = word.lower()
                 has_upper = True
             new_word = swap_random(word)
             if has_upper:
                 new_word = new_word[0].upper() + new_word[1::]
-                print("2: " + new_word)
             changes.append([text.find(words[rand]), words[rand], new_word])
             new_text = new_text.replace(words[rand], new_word)
             change_count += 1
-            print("2: " + new_text)
 
     if only_changes:
         json_out = json.dumps({'data': new_text, 'changes': changes}, indent=None, separators=(",", ":"))
